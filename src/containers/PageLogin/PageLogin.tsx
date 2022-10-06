@@ -50,7 +50,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
   const context = useContext(AuthContext);
   // console.log(context);
   // console.log(localStorage.getItem("token"));
-  const [error, setError] = React.useState([]);
+
   console.log(context);
   const [mutateFunction, { data, loading }] = useMutation(GET_AUTH, {
     // update(proxy, { data: { loginUser: userData } }) {
@@ -88,15 +88,9 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
       context.login(context);
       localStorage.setItem("token", token);
       // window.location.href = "./";
-    } else {
-      notify();
-    }
+    } 
   };
-  // React.useEffect(() => {
-  //   if (error) {
-  //     notify();
-  //   }
-  // }, [error]);
+
   return (
     <div className={`nc-PageLogin ${className}`} data-nc-id="PageLogin">
       <Helmet>
