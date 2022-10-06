@@ -184,7 +184,13 @@ const MyRoutes = () => {
   console.log(context);
   const WIN_WIDTH = useWindowSize().width || window.innerWidth;
   return (
+<<<<<<< HEAD
     <BrowserRouter basename={"/"}>
+=======
+    <BrowserRouter
+      basename={"/"}
+    >
+>>>>>>> f9cadd630063ab1b2de55cb29d6e5fe2e6e306f4
       {/* <ScrollToTop />
        */}
 
