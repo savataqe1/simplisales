@@ -6,7 +6,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { ApolloProvider, useQuery, gql } from "@apollo/client";
 function App() {
   console.log(
-    "%c Made by sᴀlvᴀ → ",
+    "%c Made by sᴀlvᴀ <3 → ",
     "background: black; color: white; padding: 1ch 2ch; border-radius: 2rem;",
   );
   return (
