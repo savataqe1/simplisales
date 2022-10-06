@@ -53,7 +53,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
   const [error, setError] = React.useState([]);
   console.log(context);
   const [mutateFunction, { data, loading }] = useMutation(GET_AUTH, {});
-
+  console.log(data);
   const [formData, setFormData] = useState<Values>({ email: "", password: "" });
   const inputsHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -76,12 +76,14 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 
     if (test) {
       const token = test.data.login;
-      navigate("/");
+      // navigate("/");
       console.log(context);
 
       context.login(context);
       localStorage.setItem("token", token);
       // window.location.href = "./";
+    } else {
+      notify();
     }
   };
 

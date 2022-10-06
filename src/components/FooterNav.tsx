@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/outline";
 import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 import { PathName } from "routers/types";
 import MenuBar from "shared/MenuBar/MenuBar";
 import isInViewport from "utils/isInViewport";
@@ -51,9 +52,11 @@ const FooterNav = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   //
   const { data } = useQuery(GET_USER);
+  const context = React.useContext(AuthContext);
   function logout() {
-    localStorage.removeItem("token");
-    window.location.reload();
+    context.logout();
+    // localStorage.removeItem("token");
+    // window.location.reload();
   }
   const location = useLocation();
 

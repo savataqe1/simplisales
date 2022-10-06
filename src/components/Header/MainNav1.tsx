@@ -25,8 +25,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
   const context = React.useContext(AuthContext);
   const { data } = useQuery(GET_USER);
   function logout() {
-    localStorage.removeItem("token");
-    window.location.reload();
+    context.logout();
   }
   return (
     data && (
