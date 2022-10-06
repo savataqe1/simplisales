@@ -184,9 +184,7 @@ const MyRoutes = () => {
   console.log(context);
   const WIN_WIDTH = useWindowSize().width || window.innerWidth;
   return (
-    <BrowserRouter
-      basename={process.env.NODE_ENV === "production" ? "chisfis" : ""}
-    >
+    <BrowserRouter basename={"/"}>
       {/* <ScrollToTop />
        */}
 
